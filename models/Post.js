@@ -4,8 +4,9 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
     title: String,
     content: String,
-    dateCreated: Date.now,
-    postedBy: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+    dateCreated: { type: Date, default: Date.now },
+    author: String
+    // how would comments be implemented?
 });
 
 var Post = mongoose.model('Post', postSchema);
